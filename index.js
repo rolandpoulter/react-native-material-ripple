@@ -76,7 +76,7 @@ export default class Ripple extends PureComponent {
 
     if (!rippleSequential || !ripples.length) {
       if ('function' === typeof onPress) {
-        requestAnimationFrame(() => onPress(event));
+        onPress(event);
       }
 
       this.startRipple(event);
@@ -87,7 +87,7 @@ export default class Ripple extends PureComponent {
     let { onLongPress } = this.props;
 
     if ('function' === typeof onLongPress) {
-      requestAnimationFrame(() => onLongPress(event));
+      onLongPress(event);
     }
 
     this.startRipple(event);
